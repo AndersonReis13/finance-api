@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS reports(
+    id SERIAL PRIMARY KEY,
+    user_id BIGINT REFERENCES users(id) DELETE ON CASCADE,
+    type VARCHAR(50) NOT NULL,
+    data JSONB NOT NULL,
+    created_at TIMESTAMP DEFAULT NOW()
+);
