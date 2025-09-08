@@ -1,5 +1,6 @@
 package com.andersonreis13.financialmanegment.exceptions.handle;
 
+import com.andersonreis13.financialmanegment.exceptions.BadRequestException;
 import com.andersonreis13.financialmanegment.exceptions.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,5 +22,18 @@ public class CustomizedExceptionHandle {
         );
         return new ResponseEntity<>(modelFormExceptionHandle, HttpStatus.NOT_FOUND);
     }
+    @ExceptionHandler(BadRequestException.class)
+    public ResponseEntity<ModelFormExceptionHandle> BadRequestExceptionHandle(WebRequest request,
+                                                                            BadRequestException ex){
+        ModelFormExceptionHandle modelFormExceptionHandle = new ModelFormExceptionHandle(
+                ex.getMessage(),
+                request.getDescription(false),
+                HttpStatus.BAD_REQUEST.value(),
+                HttpStatus.BAD_REQUEST
+        );
+        return new ResponseEntity<>(modelFormExceptionHandle, HttpStatus.BAD_REQUEST);
+    }
+
+
 
 }

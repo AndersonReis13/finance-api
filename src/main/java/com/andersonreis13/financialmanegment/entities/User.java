@@ -1,8 +1,6 @@
 package com.andersonreis13.financialmanegment.entities;
 
 import jakarta.persistence.*;
-
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity()
@@ -10,7 +8,7 @@ import java.time.LocalDateTime;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private String name;
 
     @Column(unique = true,nullable = false)
@@ -24,7 +22,7 @@ public class User {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    public User(Integer id, String name, String email, String password, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public User(Long id, String name, String email, String password, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -33,7 +31,10 @@ public class User {
         this.updatedAt = updatedAt;
     }
 
-    public Integer getId() {
+    public User() {
+    }
+
+    public Long getId() {
         return id;
     }
 

@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    @Query("SELECT u FROM User u WHERE LOWER(u.email) = LOWER(:email)")
-    Optional<User> findUserByUserEmail(@Param("email") String email);
+    Optional<User> findUserByEmail(@Param("email") String email);
 
+    boolean existsUserByEmail(String email);
 }
