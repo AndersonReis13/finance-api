@@ -33,6 +33,9 @@ public class Notification {
         this.createdAt = createdAt;
     }
 
+    public Notification() {
+    }
+
     public Long getId() {
         return id;
     }

@@ -42,6 +42,9 @@ public class Budget {
         this.createdAt = createdAt;
     }
 
+    public Budget() {
+    }
+
     public Long getId() {
         return id;
     }

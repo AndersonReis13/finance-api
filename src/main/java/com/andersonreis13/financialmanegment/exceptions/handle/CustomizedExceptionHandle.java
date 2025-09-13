@@ -34,6 +34,18 @@ public class CustomizedExceptionHandle {
         return new ResponseEntity<>(modelFormExceptionHandle, HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ModelFormExceptionHandle> ExceptionHandle(WebRequest request,
+                                                                              Exception ex){
+        ModelFormExceptionHandle modelFormExceptionHandle = new ModelFormExceptionHandle(
+                ex.getMessage(),
+                request.getDescription(false),
+                HttpStatus.BAD_REQUEST.value(),
+                HttpStatus.BAD_REQUEST
+        );
+        return new ResponseEntity<>(modelFormExceptionHandle, HttpStatus.BAD_REQUEST);
+    }
+
 
 
 }

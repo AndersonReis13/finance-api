@@ -26,6 +26,9 @@ public class Category {
         this.createdAt = createdAt;
     }
 
+    public Category() {
+    }
+
     public Long getId() {
         return id;
     }

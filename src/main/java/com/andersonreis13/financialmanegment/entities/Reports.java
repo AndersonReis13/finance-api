@@ -33,6 +33,9 @@ public class Reports {
         this.createdAt = createdAt;
     }
 
+    public Reports() {
+    }
+
     public Long getId() {
         return id;
     }
