@@ -42,6 +42,11 @@ public class Account {
         this.updatedAt = updatedAt;
     }
 
+
+
+    public Account() {
+    }
+
     public Long getId() {
         return id;
     }
