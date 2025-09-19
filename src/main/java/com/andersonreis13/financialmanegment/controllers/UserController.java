@@ -21,7 +21,7 @@ public class UserController {
         return ResponseEntity.ok().body(userService.getUserById(id));
     }
 
-    @PostMapping
+    @PutMapping
     public ResponseEntity<UserUpdateResponse> updateUser(@RequestBody UserUpdateRequest request){
         return ResponseEntity.ok().body(userService.updateUser(request));
     }
